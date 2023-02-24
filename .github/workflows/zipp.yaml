@@ -1,0 +1,39 @@
+name: Deploy dev network
+on:
+  push:
+ 
+jobs:
+  download-wasm:
+    name: Download wasm contracts
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: wasm
+        run: |
+          mkdir optimized-binaries-main-net
+          touch optimized-binaries-main-net/t1.wasm
+          touch optimized-binaries-main-net/t2.wasm
+          touch optimized-binaries-main-net/t3.wasm
+          mkdir optimized-binaries-test-net
+          touch optimized-binaries-test-net/t14.wasm
+          touch optimized-binaries-test-net/t24.wasm
+          touch optimized-binaries-test-net/t34.wasm
+
+      - name: Zip test
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r optimized-binaries-test-net.zip optimized-binaries-test-net
+
+      - name: Zip main
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r optimized-binaries-main-net.zip optimized-binaries-main-net
+
+      - uses: "marvinpinto/action-automatic-releases@6273874b61ebc8c71f1a61b2d98e234cf389b303"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          draft: true
+          files: |
+            optimized-binaries-test-net
+            optimized-binaries-main-net
