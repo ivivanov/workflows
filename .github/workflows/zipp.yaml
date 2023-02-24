@@ -38,5 +38,5 @@ jobs:
           prerelease: false
           draft: true
           files: |
-            optimized-binaries-test-net
-            optimized-binaries-main-net
+            optimized-binaries-test-net.zip
+            optimized-binaries-main-net.zip
