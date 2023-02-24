@@ -8,6 +8,7 @@ jobs:
   download-wasm:
     name: Download wasm contracts
     runs-on: ubuntu-latest
+    permissions: write-all
 
     steps:
       - name: wasm
