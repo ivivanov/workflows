@@ -14,13 +14,13 @@ jobs:
       - name: wasm
         run: |
           mkdir optimized-binaries-main-net
-          touch optimized-binaries-main-net/t1.wasm
-          touch optimized-binaries-main-net/t2.wasm
-          touch optimized-binaries-main-net/t3.wasm
           mkdir optimized-binaries-test-net
-          touch optimized-binaries-test-net/t14.wasm
-          touch optimized-binaries-test-net/t24.wasm
-          touch optimized-binaries-test-net/t34.wasm
+          echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-main-net/t1.wasm
+          echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-main-net/t2.wasm
+          echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-main-net/t3.wasm
+          echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-test-net/t14.wasm
+          echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-test-net/t24.wasm
+          echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-test-net/t34.wasm
 
       - name: Zip test
         uses: montudor/action-zip@v1
