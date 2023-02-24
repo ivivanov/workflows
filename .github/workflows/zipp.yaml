@@ -1,7 +1,9 @@
 name: Deploy dev network
 on:
   push:
- 
+    # Only tags which match the protected tag pattern will trigger this workflow
+    tags:
+      - v*.*.*
 jobs:
   download-wasm:
     name: Download wasm contracts
