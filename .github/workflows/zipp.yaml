@@ -22,13 +22,10 @@ jobs:
           echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-test-net/t24.wasm
           echo "asfsgfdhdfhfdhdfhfdh" >> optimized-binaries-test-net/t34.wasm
 
-      - name: install zip
-        run: |
-          yum install zip
-
       - name: Zip test
-        run: |
-          zip -j -r optimized-binaries-test-net.zip optimized-binaries-test-net/*
+        uses: montudor/action-zip@v1
+        with:
+          args: "zip -j -r optimized-binaries-test-net.zip optimized-binaries-test-net/*"
 
       - name: Zip main
         uses: montudor/action-zip@v1
