@@ -24,7 +24,7 @@ jobs:
 
       - name: install zip
         run: |
-          apt install zip
+          yum install zip
 
       - name: Zip test
         run: |
