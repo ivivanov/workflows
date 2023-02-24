@@ -25,7 +25,7 @@ jobs:
       - name: Zip test
         uses: vimtor/action-zip@v1.1
         with:
-          files: optimized-binaries-test-net/*
+          files: optimized-binaries-test-net
           dest: optimized-binaries-test-net.zip
 
       - uses: "marvinpinto/action-automatic-releases@6273874b61ebc8c71f1a61b2d98e234cf389b303"
